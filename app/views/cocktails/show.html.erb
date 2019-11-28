@@ -7,13 +7,15 @@
   <ul>
   <% @doses.each do |dose| %>
     <% ingredient = Ingredient.find(dose.ingredient_id) %>
-      <li>
-      <div class="container d-flex justify-content-between align-items-center">
-      <%= dose.description %> <%= ingredient.name %>
-      </div>
-      <%= link_to "delete", cocktail_dose_path(@cocktail.id, dose.id),
-          method: :delete,
-          data: { confirm: "Are you sure?" }, class: "btn btn-outline-info my-2" %>
+      <li class="border">
+        <div class="d-flex align-items-center">
+          <div class="container d-flex justify-content-between align-items-center">
+          <%= dose.description %> <%= ingredient.name %>
+          </div>
+          <%= link_to "delete", cocktail_dose_path(@cocktail.id, dose.id),
+              method: :delete,
+              data: { confirm: "Are you sure?" }, class: "btn btn-outline-info my-2" %>
+        </div>
       </li>
   <% end %>
   </ul>
