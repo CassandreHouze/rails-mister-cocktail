@@ -1,0 +1,8 @@
+<div class="container">
+  <%= link_to "new cocktail", new_cocktail_path, class: "btn btn-outline-info my-2" %>
+  <h2 class="text-center py-5 border">COCKTAILS</h2>
+
+  <% @cocktails.each do |cocktail| %>
+    <p><strong><%= link_to cocktail.name , cocktail_path(cocktail)%></strong></p>
+  <% end %>
+</div>

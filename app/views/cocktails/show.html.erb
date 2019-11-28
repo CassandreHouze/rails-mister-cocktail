@@ -1,0 +1,27 @@
+<div class="container">
+  <%= link_to "<<", cocktails_path, class: "btn btn-outline-info my-2" %>
+  <h3 class="text-center py-5 border"><%= @cocktail.name %></h3>
+  <br>
+
+  <h4>Ingredients</h4>
+  <ul>
+  <% @doses.each do |dose| %>
+    <% ingredient = Ingredient.find(dose.ingredient_id) %>
+      <li>
+      <div class="container d-flex justify-content-between align-items-center">
+      <%= dose.description %> <%= ingredient.name %>
+      </div>
+      <%= link_to "delete", cocktail_dose_path(@cocktail.id, dose.id),
+          method: :delete,
+          data: { confirm: "Are you sure?" }, class: "btn btn-outline-info my-2" %>
+      </li>
+  <% end %>
+  </ul>
+
+  <%= simple_form_for [@cocktail, @dose] do |f|  %>
+    <%= f.association :ingredient %>
+    <%= f.input :description %>
+    <%= f.submit %>
+  <% end %>
+
+</div>
