@@ -1,8 +1,26 @@
-<div class="container">
-  <%= link_to "new cocktail", new_cocktail_path, class: "btn btn-outline-info my-2" %>
-  <h2 class="text-center py-5 border">COCKTAILS</h2>
-
-  <% @cocktails.each do |cocktail| %>
-    <p><strong><%= link_to cocktail.name , cocktail_path(cocktail)%></strong></p>
-  <% end %>
+<div class="card-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://res.cloudinary.com/casstest1706/image/upload/v1575026793/glmtlnggpeakihxnywdd.jpg')">
+  <%= link_to "CREATE A NEW COCKTAIL", new_cocktail_path, class: "btn-home" %>
 </div>
+
+<div class="container content">
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-3 my-4">
+        <div class="card-cocktail">
+          <% if cocktail.photo? %>
+            <%= cl_image_tag cocktail.photo, height: 300, width: 400, crop: :fill %>
+          <% else %>
+            <%= cl_image_tag "https://images.unsplash.com/photo-1486428263684-28ec9e4f2584?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2468&q=80" %>
+            <!-- <img src="https://source.unsplash.com/random" alt=""> -->
+          <% end %>
+          <div class="card-cocktail-infos">
+              <h2><%= link_to cocktail.name , cocktail_path(cocktail)%></h2>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+

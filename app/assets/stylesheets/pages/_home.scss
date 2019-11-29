@@ -1,1 +1,72 @@
 // Specific CSS for your home-page
+.card-home {
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+  a {
+    text-decoration: none
+  }
+
+  .btn-home {
+    color: white;
+    font-weight: lighter;
+    padding: 8px 24px;
+    border-radius: 4px;
+    background: #A63A50;
+    transition: background 0.3s ease;
+    margin-bottom: 30px;
+
+    &:hover {
+        background: #AB9B96
+      }
+  }
+}
+
+.content {
+  margin-top: 30px;
+}
+
+.card-cocktail {
+  width: 200px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+  img {
+    height: 170px;
+    width: 200px;
+  }
+
+  h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .card-cocktail-infos {
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a {
+      color: #A63A50;
+      text-decoration: none;
+
+      &:hover {
+        color: #AB9B96
+      }
+    }
+  }
+}
+
